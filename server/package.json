@@ -1,1 +1,27 @@
-
+{
+"name": "ecoaction-backend",
+"version": "1.0.0",
+"description": "MERN Backend for SDG 13 Climate Action Tracker",
+"main": "server.js",
+"scripts": {
+"start": "node server.js",
+"dev": "nodemon server.js"
+},
+"keywords": [
+"mern",
+"express",
+"mongodb",
+"sdg"
+],
+"author": "",
+"license": "ISC",
+"dependencies": {
+"cors": "^2.8.5",
+"dotenv": "^16.4.5",
+"express": "^4.19.2",
+"mongoose": "^8.4.1"
+},
+"devDependencies": {
+"nodemon": "^3.1.2"
+}
+}
