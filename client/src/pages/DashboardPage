@@ -1,0 +1,17 @@
+const DashboardPage = ({ activities, loading, error, onNavigate }) => {
+  const [summary, setSummary] = useState({ total: 0, breakdown: {} });
+  const [recommendation, setRecommendation] = useState('');
+
+  useEffect(() => {
+    if (activities.length === 0) {
+      setSummary({ total: 0, breakdown: {} });
+      setRecommendation("Start logging your activities to see your carbon footprint!");
+      return;
+    }
+
+    const total = activities.reduce((sum, act) => sum + act.carbonFootprint, 0);
+    const breakdown = activities.reduce((acc, act) => {
+      acc[act.type] = (acc[act.type] || 0) + act.carbonFootprint;
+      return acc;
+    }, {});
+    setSummary({ total, breakdown });
